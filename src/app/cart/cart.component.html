@@ -1,0 +1,15 @@
+<h2>Shopping Cart</h2>
+<h3 *ngIf="cartProductList.length === 0">Your cart is empty.</h3>
+<a routerLink="/">Back to shopping</a>
+<div *ngIf="cartProductList.length > 0">
+<ul>
+    <li *ngFor="let item of cartProductList">
+        {{ item.name }} 
+        <br>
+        {{ item.price }}
+        <br>
+        {{ item.quantity}}
+    </li>
+</ul>
+<p>Total: {{ cartTotal }}</p>
+</div>
