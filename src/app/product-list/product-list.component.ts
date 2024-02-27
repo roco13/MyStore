@@ -11,7 +11,7 @@ import { ShoppingCartService } from '../services/shopping-cart.service';
 export class ProductListComponent implements OnInit {
   productList: Product[] = [];
   quantity: number = 1;
-  constructor(private productService: ProductService, private shoppingCartService: ShoppingCartService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(res => {
@@ -23,9 +23,9 @@ export class ProductListComponent implements OnInit {
       this.productList = res;
     });
   }
-  addToCart(product: Product) {
-    this.shoppingCartService.addProduct(product);
-    console.log('product added to cart', product);
-    alert('Product added to cart');
-  }
+  // addToCart(product: Product) {
+  //   this.shoppingCartService.addProduct(product);
+  //   console.log('product added to cart', product);
+  //   alert('Product added to cart');
+  // }
 }

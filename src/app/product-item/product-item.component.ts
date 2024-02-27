@@ -9,13 +9,20 @@ import { ShoppingCartService } from '../services/shopping-cart.service';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent implements OnInit {
-  @Input() product!: Product;
+  @Input() product: Product;
   //@Output() setQuantity: EventEmitter <Number> = new EventEmitter; 
   
  // @Output() addToCartEvent: EventEmitter<Product> = new EventEmitter<Product>();
   
   constructor(private msg: MessengerService, private shoppingCartService: ShoppingCartService) {
-    
+    this.product = {
+      id: 0,
+      name: '',
+      description: '',
+      price: 0,
+      url: '',
+      quantity: 1
+    };
    }
 
   ngOnInit(): void {
@@ -25,9 +32,7 @@ export class ProductItemComponent implements OnInit {
   handleAddToCart() {
     console.log('this.product inside product-item', this.product);
      //this.msg.sendMsg(this.product)
-    // this.shoppingCartService.addProduct(this.product).subscribe( () => {
-    //   this.msg.sendMsg(this.product);
-    // });
+    this.shoppingCartService.addProduct(this.product)
   }
   setQuantity(quantity: number) {
     // Handle the quantity here
