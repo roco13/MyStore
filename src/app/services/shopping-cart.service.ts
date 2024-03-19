@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 })
 export class ShoppingCartService {
   shoppingCartList: Product[] = [];
-  options: string[] = ['0','1','2','3','4','5','6','7','8','9','10'];
+  options: string[] = ['1','2','3','4','5','6','7','8','9','10'];
   cartTotal: number = 0;
   userName: string = '';
 

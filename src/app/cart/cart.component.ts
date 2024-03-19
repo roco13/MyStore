@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ShoppingCartService } from '../services/shopping-cart.service';
 import { Router } from '@angular/router';
 import { Product } from '../models/Product';
@@ -14,14 +14,12 @@ export class CartComponent implements OnInit {
   options: string[] = [];
   userName: string = '';
   userAddress: string = '';
-  userCC: string = '';
+  userCC?: number;
 
   constructor(private shoppingCartService: ShoppingCartService, private router: Router ) { }
 
   ngOnInit(): void {
     this.cartProductList = this.shoppingCartService.getProductsInCart();
-    console.log('cartProductList in cart component=', this.cartProductList);
-
     //display the initial cart total
     this.cartTotal = this.shoppingCartService.getTotal();
 
@@ -31,15 +29,12 @@ export class CartComponent implements OnInit {
       this.cartTotal = total;
     });
     this.options = this.shoppingCartService.options;
-    console.log('options in cart component=', this.options);
-    
   }
 
   removeProduct(product: Product): void {
-    //this worked on the cart but did not remove from cartProductList
-    //this.cartProductList= this.cartProductList.filter(item => item.id !== product.id);
     this.shoppingCartService.clearProduct(product);
     this.cartProductList = this.shoppingCartService.getProductsInCart();
+    this.cartTotal= this.shoppingCartService.getTotal();
     alert("Cleared!");
   }
 

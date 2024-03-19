@@ -3,7 +3,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1024px;
-    margin-bottom: 64px;
+    margin: 0 auto 64px;
+    font-family: "Open Sans", sans-serif;
   }
   
   ::ng-deep .product-container {

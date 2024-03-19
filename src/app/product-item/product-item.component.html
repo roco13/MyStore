@@ -1,25 +1,21 @@
-<!-- 
-    here or in the list component?
-    <a routerLink="product/{{ product.id }}"> Product Details </a> 
-    Product Details </a>
- -->
 <div class="product-container">
-
-    <!-- display <a> only in product list page -->
-    <p *ngIf="showImgLink"><a routerLink="product/{{ product.id }}"> <img [src]="product.url" class="product-image"/></a></p>
-    <p *ngIf="!showImgLink"><img [src]="product.url" class="product-image"/></p>
-
-
+  <div>
+    <p>
+        <a *ngIf="showImgLink" routerLink="product/{{ product.id }}"> <img [src]="product.url" class="product-image"/></a>
+        <img *ngIf="!showImgLink" [src]="product.url" class="product-image"/>
+    </p>
+  </div>
+  <div class="product-info">
     <p class="product-name">{{product.name}}</p>
     <p class="product-price">${{product.price}}</p>
     <p *ngIf="showProductDescription">{{product.description}}</p>
-
-    <p>product quantity= {{product.quantity}}</p>
+  
     <p>
       <select [ngModel]="product.quantity" (ngModelChange)="changeQuantity($event)">
         <option *ngFor="let option of options" [value]="option">{{option}}</option>
       </select>
-     </p>
+      </p>
     <p *ngIf="showAddProductButton"><button (click)="handleAddToCart()">Add To Cart</button></p>
     <p *ngIf="showRemoveProductButton"><button (click)="handleRemoveFromCart()">Remove From Cart</button></p>
+</div>
 </div>

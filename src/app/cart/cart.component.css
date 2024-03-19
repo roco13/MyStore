@@ -1,6 +1,10 @@
 .cart {
-  margin: 0 10px
+  margin: 0 20px;
+
+  font-family: "Open Sans", sans-serif;
 }
+.cart h2, .cart-empty, .cart-back-shopping {text-align: center;}
+.cart-back-shopping a {color: #666;}
 img {
     width: 100px;
     border-radius: 10px;
@@ -32,7 +36,7 @@ img {
   .cart-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     /* margin-top: 64px; */
     margin: 10px 15px 0;
   }
@@ -40,11 +44,38 @@ img {
   .cart-panel {
     margin-left: 50px;
     margin-right: 50px;
+    border-right: 1px solid #666;
   }
- 
+  .cart-right-panel input {
+    margin-bottom: 10px;
+  }
   .empty-cart-message {
     display: flex;
     justify-content: center;
     margin-top: 64px;
   }
-  ::ng-deep .cart-container .product-container {margin-top: 0 !important;}
+  ::ng-deep .cart-container .product-container {
+    margin-top: 0 !important;
+    margin-bottom: 30px;
+    padding: 3px 0;
+    flex-direction: row !important;
+    border-bottom: 1px solid #999;
+  }
+  ::ng-deep .cart-container .product-info {
+    margin-left: 20px;
+  }
+  button {
+    background-color: #1192fe;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  button:disabled {opacity: 0.5;}
+  input {width: 300px;}
+  .cart-total { font-weight: bold;}
+  
