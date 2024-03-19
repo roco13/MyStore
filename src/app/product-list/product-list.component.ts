@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/Product';
 import { ProductService } from '../services/product.service';
-import { ShoppingCartService } from '../services/shopping-cart.service';
 
 @Component({
   selector: 'app-product-list',

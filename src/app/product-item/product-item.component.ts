@@ -10,7 +10,6 @@ import { ShoppingCartService } from '../services/shopping-cart.service';
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
   @Input() productQuantity: number = 1;
-  //@Input() options: string[] = ['1','2','3','4','5','6','7','8','9','10'];
   @Input() options: string[] = [];
   cartTotal: number = 0;
 
