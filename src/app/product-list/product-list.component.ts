@@ -22,9 +22,5 @@ export class ProductListComponent implements OnInit {
       this.productList = res;
     });
   }
-  // addToCart(product: Product) {
-  //   this.shoppingCartService.addProduct(product);
-  //   console.log('product added to cart', product);
-  //   alert('Product added to cart');
-  // }
+
 }

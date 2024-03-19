@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+  .confirmation-items span {font-weight: bold;}
   .confirmation-header {
     color: #33e5bc
   }

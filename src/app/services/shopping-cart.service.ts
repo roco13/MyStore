@@ -9,6 +9,7 @@ export class ShoppingCartService {
   shoppingCartList: Product[] = [];
   options: string[] = ['0','1','2','3','4','5','6','7','8','9','10'];
   cartTotal: number = 0;
+  userName: string = '';
 
   cartSubject = new Subject<Product[]>();
   cartTotalSubject = new Subject<number>();
@@ -17,6 +18,8 @@ export class ShoppingCartService {
   shoppingCartList$ = this.cartSubject.asObservable();
   // Observable for cartTotal
   cartTotal$ = this.cartTotalSubject.asObservable();
+  
+
   constructor() { }
 
   getProductsInCart() {
@@ -73,5 +76,12 @@ export class ShoppingCartService {
     this.cartTotalSubject.next(this.cartTotal);
     console.log('cartTotal in getTotal() SERVICE=', this.cartTotal);
     return this.cartTotal;
+  }
+  getUserName(name: string) {
+    this.userName = name;
+  }
+  clearCart() {
+    this.shoppingCartList = [];
+    this.cartTotal = 0;
   }
 }

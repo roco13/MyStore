@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
@@ -12,7 +11,6 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateQuantityComponent } from './update-quantity/update-quantity.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 
 
 @NgModule({
@@ -24,8 +22,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     ProductItemDetailComponent,
     ProductListComponent,
     NavigationComponent,
-    UpdateQuantityComponent,
-    ProductQuantityComponent
+    UpdateQuantityComponent
   ],
   imports: [
     BrowserModule,

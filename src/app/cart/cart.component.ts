@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ShoppingCartService } from '../services/shopping-cart.service';
+import { Router } from '@angular/router';
 import { Product } from '../models/Product';
 
 @Component({
@@ -11,7 +12,11 @@ export class CartComponent implements OnInit {
   cartProductList: Product[] = [];
   cartTotal: number = 0;
   options: string[] = [];
-  constructor(private shoppingCartService: ShoppingCartService ) { }
+  userName: string = '';
+  userAddress: string = '';
+  userCC: string = '';
+
+  constructor(private shoppingCartService: ShoppingCartService, private router: Router ) { }
 
   ngOnInit(): void {
     this.cartProductList = this.shoppingCartService.getProductsInCart();
@@ -30,20 +35,13 @@ export class CartComponent implements OnInit {
     
   }
 
-  // addToCart(product: Product) {
-  //   this.shoppingCartService.addProductToCart(product);
-  //   alert('Product added to cart');
-  // }
-
-
   removeProduct(product: Product): void {
-    // this.cartProductList = this.shoppingCartService.clearProduct(product);
-    
-    // this.shoppingCartService.shoppingCartList$.subscribe(productList => {
-    //   console.log('Updated shopping cart list:', productList);
-    //   this.cartProductList = productList;
-    // });
     this.cartProductList= this.cartProductList.filter(item => item.id !== product.id);
     alert("Cleared!");
+  }
+
+  submitOrder() {
+    this.shoppingCartService.getUserName(this.userName);
+    this.router.navigate(['/confirmation']);
   }
 }
