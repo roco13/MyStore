@@ -14,12 +14,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Features
 
-. View list of available products
-. Add products to the shopping cart
-. View product details
-. Update product quantity in the shopping cart
-. Remove products from the shopping cart
-. Submit order and get confirmation page
+- View list of available products
+- Add products to the shopping cart
+- View product details
+- Update product quantity in the shopping cart
+- Remove products from the shopping cart
+- Submit order and get confirmation page
 
 ## Further help
 
