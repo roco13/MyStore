@@ -9,7 +9,6 @@ import { ProductItemDetailComponent } from './product-item-detail/product-item-d
 import { ProductListComponent } from './product-list/product-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FormsModule } from '@angular/forms';
-import { UpdateQuantityComponent } from './update-quantity/update-quantity.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -21,8 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProductItemComponent,
     ProductItemDetailComponent,
     ProductListComponent,
-    NavigationComponent,
-    UpdateQuantityComponent
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
