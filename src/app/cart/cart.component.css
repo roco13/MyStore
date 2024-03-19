@@ -3,8 +3,8 @@
 
   font-family: "Open Sans", sans-serif;
 }
-.cart h2, .cart-empty, .cart-back-shopping {text-align: center;}
-.cart-back-shopping a {color: #666;}
+.cart h2, .cart-empty, .back-shopping {text-align: center;}
+back-shopping a {color: #666;}
 img {
     width: 100px;
     border-radius: 10px;
@@ -36,6 +36,7 @@ img {
   .cart-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     /* margin-top: 64px; */
     margin: 10px 15px 0;
@@ -78,4 +79,16 @@ img {
   button:disabled {opacity: 0.5;}
   input {width: 300px;}
   .cart-total { font-weight: bold;}
+  @media screen and (max-width: 480px) {
+    .cart-panel {
+      border-right: none;
+    }
+    ::ng-deep .cart-container .product-container {
+      flex-direction: column !important;
+    }
+    ::ng-deep .cart-container .product-info {
+      margin-left: 0;
+    }
+    
+  }
   

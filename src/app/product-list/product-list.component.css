@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    justify-content: center;
     max-width: 1024px;
     margin: 0 auto 64px;
     font-family: "Open Sans", sans-serif;
