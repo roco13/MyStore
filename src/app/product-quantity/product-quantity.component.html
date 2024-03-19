@@ -1,0 +1,15 @@
+<h1>product quantity component</h1>
+<form>
+<select [(ngModel)]="selectedOption"  name="productQuantity"  [ngModelOptions]="{standalone: true}">
+    <option *ngFor="let option of options" [value]="option">{{option}}</option>
+  </select>
+
+
+  <!-- <select class="form-control" [ngModel]="selectedOption" (ngModelChange)="onChange($event)">
+    <option *ngFor="#workout of workouts" [value]="workout.id">{{workout.name}}</option>
+</select>
+
+<select class="form-control" [(ngModel)]="selectedOption" (change)="onChange($event.target.value)">
+  <option *ngFor="#option of options" [value]="option" >{{workout.name}}</option>
+</select> -->
+  </form>

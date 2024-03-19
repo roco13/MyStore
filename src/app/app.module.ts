@@ -12,6 +12,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateQuantityComponent } from './update-quantity/update-quantity.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductItemDetailComponent,
     ProductListComponent,
     NavigationComponent,
-    UpdateQuantityComponent
+    UpdateQuantityComponent,
+    ProductQuantityComponent
   ],
   imports: [
     BrowserModule,

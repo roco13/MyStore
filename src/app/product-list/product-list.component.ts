@@ -19,7 +19,6 @@ export class ProductListComponent implements OnInit {
         const product = res[i]
         product.quantity = this.quantity;
       }
-      console.log('res', res);
       this.productList = res;
     });
   }

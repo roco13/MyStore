@@ -6,7 +6,8 @@
     margin-bottom: 64px;
   }
   
-  .product-container {
+  ::ng-deep .product-container {
     display: flex;
     justify-content: center;
+    margin: 0 15px;
   }

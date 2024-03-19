@@ -1,3 +1,6 @@
+.cart {
+  margin: 0 10px
+}
 img {
     width: 100px;
     border-radius: 10px;
@@ -6,7 +9,7 @@ img {
   .form-margin {
     margin-bottom: 12px;
   }
-  
+  form > * { display: block;}
   .cart-item {
     display: flex;
     flex-direction: row;
@@ -30,16 +33,18 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 64px;
+    /* margin-top: 64px; */
+    margin: 10px 15px 0;
   }
   
   .cart-panel {
     margin-left: 50px;
     margin-right: 50px;
   }
-  
+ 
   .empty-cart-message {
     display: flex;
     justify-content: center;
     margin-top: 64px;
   }
+  ::ng-deep .cart-container .product-container {margin-top: 0 !important;}

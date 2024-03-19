@@ -1,13 +1,28 @@
 <!-- 
-    here or in the list component
-    <a routerLink="product/{{ produc.id }}"> Product Details </a> 
+    here or in the list component?
+    <a routerLink="product/{{ product.id }}"> Product Details </a> 
+    Product Details </a>
  -->
 <div class="product-container">
-    <p><img src="{{product.url}}" class="product-image"/></p>
-    <p>{{product.name}}</p>
-    <p>{{product.price}}</p>
-     <!-- add form here -->
-     <app-update-quantity (setQuantity)="setQuantity($event)"></app-update-quantity>
-    <button (click)="handleAddToCart()">Add to Shopping Cart</button>
-</div>
 
+    <!-- display <a> only in product list page -->
+    <p *ngIf="showImgLink"><a routerLink="product/{{ product.id }}"> <img [src]="product.url" class="product-image"/></a></p>
+    <p *ngIf="!showImgLink"><img [src]="product.url" class="product-image"/></p>
+
+
+    <p class="product-name">{{product.name}}</p>
+    <p class="product-price">${{product.price}}</p>
+    <p *ngIf="showProductDescription">{{product.description}}</p>
+
+    <p>product quantity= {{product.quantity}}</p>
+    <p>
+      <select [ngModel]="product.quantity" (ngModelChange)="changeQuantity($event)">
+        <option *ngFor="let option of options" [value]="option">{{option}}</option>
+      </select>
+     </p>
+    <!-- <select class="form-control" [(ngModel)]="selectedOption" (change)="ChangeQuantity($event.target.value)">
+      <option *ngFor="let option of options" [value]="option" >{{option}</option>
+    </select> -->
+    <p *ngIf="showAddProductButton"><button (click)="handleAddToCart()">Add To Cart</button></p>
+    <p *ngIf="showRemoveProductButton"><button (click)="handleRemoveFromCart()">Remove From Cart</button></p>
+</div>
