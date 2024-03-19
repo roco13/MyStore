@@ -39,7 +39,6 @@ export class ShoppingCartService {
     }
     //if product is not in the list, add it
     if(!productExists) {
-      //product.quantity = 1;//???
       this.shoppingCartList.push(product);
       console.log('shoppingCartList=', this.shoppingCartList);
     }   
@@ -50,11 +49,8 @@ export class ShoppingCartService {
 
   clearProduct(product: Product) {
     //use filter to remove the product from the list
-    console.log('inside clearProduct(), remove product from cart=', product);
     this.shoppingCartList = this.shoppingCartList.filter(item => item.id !== product.id);
-    console.log('shoppingCartList=', this.shoppingCartList);
     this.cartSubject.next(this.shoppingCartList);
-    console.log('shoppingCartList in clearProduct() SERVICE=', this.shoppingCartList);
     return this.shoppingCartList;
   }
   

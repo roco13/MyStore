@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from '../services/shopping-cart.service';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service';
@@ -35,11 +35,6 @@ export class ProductItemDetailComponent implements OnInit {
       
       this.productList = res;
       this.product = res.filter(item => item.id ==  Number(id))[0];
-      // res.filter(item => {
-      //   if(item.id === this.product.id) {
-      //     this.product = item;
-      //   }
-      // });
       console.log('product item detail', this.product);
       this.product.quantity = this.quantity;
     });
