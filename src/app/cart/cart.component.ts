@@ -36,7 +36,10 @@ export class CartComponent implements OnInit {
   }
 
   removeProduct(product: Product): void {
-    this.cartProductList= this.cartProductList.filter(item => item.id !== product.id);
+    //this worked on the cart but did not remove from cartProductList
+    //this.cartProductList= this.cartProductList.filter(item => item.id !== product.id);
+    this.shoppingCartService.clearProduct(product);
+    this.cartProductList = this.shoppingCartService.getProductsInCart();
     alert("Cleared!");
   }
 

@@ -54,17 +54,10 @@ export class ShoppingCartService {
     this.shoppingCartList = this.shoppingCartList.filter(item => item.id !== product.id);
     console.log('shoppingCartList=', this.shoppingCartList);
     this.cartSubject.next(this.shoppingCartList);
+    console.log('shoppingCartList in clearProduct() SERVICE=', this.shoppingCartList);
     return this.shoppingCartList;
   }
-  // updateProductQuatity(quantity: number){
-  //   console.log('inside updateProductQuatity()');
-  //   console.log('quantity in updateProductQuatity() before update=', quantity);
-  //   this.productQuantity = quantity;
-  //   console.log('quantity in updateProductQuatity( after update)=', quantity);
-
-  //   return this.productQuantity
-  // }
-
+  
   getTotal():number {
     //reset to 0
     this.cartTotal = 0;
@@ -77,9 +70,11 @@ export class ShoppingCartService {
     console.log('cartTotal in getTotal() SERVICE=', this.cartTotal);
     return this.cartTotal;
   }
+
   getUserName(name: string) {
     this.userName = name;
   }
+
   clearCart() {
     this.shoppingCartList = [];
     this.cartTotal = 0;
