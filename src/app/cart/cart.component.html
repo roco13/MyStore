@@ -17,11 +17,10 @@
                     <label for="address">Address</label>
                     <input type="text" required name="address" placeholder="Address (Minimum 10 characters)"  minlength="10" [(ngModel)]="userAddress">
                     <label for="cc">Credit Card Number</label>
-                    <input type="text" required name="cc" placeholder="16 digit number" [(ngModel)]="userCC">
+                    <input type="number" required name="cc" placeholder="16 digit number" onKeyPress="if(this.value.length==16) return false;"  [(ngModel)]="userCC">
                     <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit Order</button>
                 </form>
             </div>
-            
         </div>
     </div>
 </div>
